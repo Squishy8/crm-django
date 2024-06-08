@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <a href="{% url 'agents:agent-list' %}">Agents</a>
+        <hr />
+        <h1>Create a new agent</h1>
+        <form method="post" action=""><!--Se coloca 'method="post"' porque indica que se va a agregar un lead, por ende we are posting a new set of information.
+        
+        Se coloca action para indicar a que path se va a enviar la información que se está ingresando-->
+
+        {%csrf_token%}<!--Esto es un aspecto de seguridad que se tiene que cumplir para cuando se este posteando información-->
+        {{form}}
+        <button type="submit">Submit</button>
+        </form>
+
+{% endblock content %}
